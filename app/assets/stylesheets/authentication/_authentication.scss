@@ -1,0 +1,102 @@
+.auth_container {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  width: 35%;
+  background-color: rgba(var(--primary-bg-color), 0.9);
+  padding: 1rem;
+  color: white;
+
+  .error {
+    color: red;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+  }
+  .auth_head {
+    padding-bottom: 2rem;
+
+    a {
+      font-size: 1.3rem;
+      transition: all 200ms ease-in-out;
+    }
+
+    a:hover {
+      color: var(--highlight-color);
+    }
+
+    .head_links {
+      display: flex;
+      justify-content: space-around;
+      padding-bottom: 1rem;
+    }
+
+    .active {
+      color: var(--highlight-color);
+      font-weight: bold;
+    }
+
+    a.active {
+      pointer-events: none;
+      cursor: default;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+    }
+  }
+
+  .auth_inner {
+    // display: table-caption;
+    width: 100%;
+
+    abbr {
+      text-decoration: none;
+    }
+
+    input {
+      width: 100%;
+      margin-top: 0.2rem;
+      height: 2rem;
+      font-size: 1.3rem;
+    }
+    .input {
+      margin-bottom: 1rem;
+    }
+    .user_remember_me {
+      text-align: left;
+      input {
+        width: auto;
+        height: 1rem;
+      }
+    }
+  }
+
+  .btn_wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .button {
+    background-color: var(--highlight-color);
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.6rem 1.5rem;
+    border: none;
+    transition: background-color 0.2s ease-out;
+
+    &:hover {
+      cursor: pointer;
+      background-color: var(--highlight-color-hover);
+      border-color: var(--highlight-color-hover);
+    }
+  }
+}
