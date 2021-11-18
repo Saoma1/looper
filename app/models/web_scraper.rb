@@ -1,5 +1,10 @@
 require 'kimurai'
 
+Kimurai.configure do |config|
+  config.selenium_firefox_path = ENV['FIREFOX_BIN'].presence
+  config.firefoxdriver_path = ENV['GECKODRIVER_PATH'].presence
+end
+
 class WebScraper < Kimurai::Base
   @name = 'torrent_spider'
   @engine = :selenium_firefox
@@ -25,7 +30,7 @@ class WebScraper < Kimurai::Base
 
   def parse(response, url:, data: {})
     @base_uri = 'https://1337x.to'
-    page = 9
+    page = 12
     today = DateTime.now
     yesterday = (today - 1)
 
