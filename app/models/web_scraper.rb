@@ -1,13 +1,22 @@
 require 'kimurai'
+# require 'webdrivers/chromedriver'
+# require 'selenium-webdriver'
+
+# Kimurai.configure do |config|
+#   config.selenium_firefox_path = ENV['FIREFOX_BIN'].presence
+#   # config.gekodriver_path = ENV['GECKODRIVER_PATH'].presence
+# end
 
 Kimurai.configure do |config|
-  config.selenium_firefox_path = ENV['FIREFOX_BIN'].presence
-  # config.gekodriver_path = ENV['GECKODRIVER_PATH'].presence
+  config.selenium_chrome_path = ENV['SELENIUM_CHROME_PATH'].presence
+  config.chromedriver_path = ENV['CHROMEDRIVER_PATH'].presence
 end
+
 
 class WebScraper < Kimurai::Base
   @name = 'torrent_spider'
-  @engine = :selenium_firefox
+  @engine = :selenium_chrome
+  # @engine = :selenium_firefox #:selenium_chrome
   @start_urls = ['https://1337x.to/cat/Movies/']
     @config = {
     user_agent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36",
@@ -30,7 +39,7 @@ class WebScraper < Kimurai::Base
 
   def parse(response, url:, data: {})
     @base_uri = 'https://1337x.to'
-    page = 12
+    page = 14
     today = DateTime.now
     yesterday = (today - 1)
 
