@@ -17,8 +17,8 @@
     <div class="container">
         <%= render 'shared/search' if user_signed_in? %>
         <%= render 'shared/sidebar' if user_signed_in? %>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+        <p class="notice notification"><%= flash.notice %></p>
+        <p class="alert notification"><%= flash.alert %></p>
       <%= yield %>
     </div>
   </body>

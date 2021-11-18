@@ -17,8 +17,10 @@ ActiveStorage.start();
 
 import { searchListener } from "../custom/searchAPI";
 import { checkWindow } from "../custom/setObject";
+import { notification } from "../custom/fade";
 
 document.addEventListener("turbolinks:load", () => {
   searchListener();
   checkWindow();
+  notification();
 });
