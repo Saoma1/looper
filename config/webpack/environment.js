@@ -13,7 +13,8 @@ environment.plugins.prepend(
 environment.plugins.prepend(
   "env",
   new webpack.DefinePlugin({
-    NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+    // NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+    "process.env": { RAILS_ENV: process.env.RAILS_ENV },
   })
 );
 
