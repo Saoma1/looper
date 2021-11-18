@@ -1,4 +1,5 @@
 require 'kimurai'
+require 'date'
 # require 'webdrivers/chromedriver'
 # require 'selenium-webdriver'
 
@@ -50,6 +51,7 @@ class WebScraper < Kimurai::Base
         response.css('tbody tr').each do |app|
           alt_href = app.css('td.name a:nth-of-type(2)').attr('href') #on the main page
           date = app.css('td.coll-date').text.to_s
+          logger.info date
           date = DateTime.parse(date)
 
           logger.info 'before date'
