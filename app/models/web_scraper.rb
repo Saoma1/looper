@@ -11,9 +11,9 @@ require 'date'
 #   # config.firefoxdriver_path = ENV['GECKODRIVER_PATH'].presence
 # end
 
-if Rails.env.production?
+# if Rails.env.production?
   Selenium::WebDriver::Firefox::Binary.path = "/app/vendor/firefox/firefox"
-end
+# end
 # Kimurai.configure do |config|
 #   config.selenium_chrome_path = ENV['SELENIUM_CHROME_PATH'].presence
 #   config.chromedriver_path = ENV['CHROMEDRIVER_PATH'].presence
