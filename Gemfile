@@ -26,6 +26,8 @@ gem 'devise'
 gem 'simple_form'
 gem 'font-awesome-sass', '~> 5.15.1'
 
+gem 'kimurai'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
