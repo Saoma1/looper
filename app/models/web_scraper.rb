@@ -16,7 +16,7 @@ end
 class WebScraper < Kimurai::Base
   @name = 'torrent_spider'
   @engine = :selenium_chrome
-  # @engine = :selenium_firefox #:selenium_chrome
+  #@engine = :selenium_firefox #:selenium_chrome
   @start_urls = ['https://1337x.to/cat/Movies/']
     @config = {
     user_agent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36",
