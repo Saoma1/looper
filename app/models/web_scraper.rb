@@ -2,7 +2,7 @@ require 'kimurai'
 
 Kimurai.configure do |config|
   config.selenium_firefox_path = ENV['FIREFOX_BIN'].presence
-  config.firefoxdriver_path = ENV['GECKODRIVER_PATH'].presence
+  # config.gekodriver_path = ENV['GECKODRIVER_PATH'].presence
 end
 
 class WebScraper < Kimurai::Base
