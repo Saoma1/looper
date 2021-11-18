@@ -11,6 +11,7 @@ Webdrivers.logger.level = :DEBUG
 
 Kimurai.configure do |config|
   config.selenium_firefox_path = "/app/vendor/firefox/firefox"
+
 end
 
   # config.selenium_firefox_path = ENV['FIREFOX_BIN'].presence
