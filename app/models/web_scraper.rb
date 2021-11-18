@@ -12,7 +12,7 @@ require 'date'
 # end
 
 # if Rails.env.production?
-  Selenium::WebDriver::Firefox::Binary.path = "/app/vendor/firefox/firefox"
+  # Selenium::WebDriver::Firefox::Binary.path = "/app/vendor/firefox/firefox"
 # end
 # Kimurai.configure do |config|
 #   config.selenium_chrome_path = ENV['SELENIUM_CHROME_PATH'].presence
