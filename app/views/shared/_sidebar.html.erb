@@ -31,7 +31,6 @@
   <div class='sidebar_content flex'>
     <div class="sidebar_title">
       <h2>My Movie List</h2>
-      <%= ENV['TMDB_API_KEY'] %>
     </div>
     <div class="scroll">
       <div class="block flex">
@@ -45,8 +44,8 @@
               <% end %>
               <div class="movie_content">
                 <h3><%= movie.title %></h3>
-                <p><%= movie.release_date.strftime("%Y-%m-%d") %></p>
                 <p><%= movie.genre %></p>
+                <p>released: <%= movie.release_date.strftime("%Y") %></p>
               </div>
               <div class='movie_hover flex-n'>
                 <i class="fas fa-sync-alt"></i>
