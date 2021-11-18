@@ -6,13 +6,18 @@ require 'date'
 # # Provide custom selenium chromedriver path (default is "/usr/local/bin/chromedriver"):
 # config.chromedriver_path = ENV["CHROMEDRIVER_PATH"].presence || "~/.local/bin/chromedriver"
 
-# Kimurai.configure do |config|
-#   config.selenium_firefox_path = ENV['FIREFOX_BIN'].presence
-#   # config.firefoxdriver_path = ENV['GECKODRIVER_PATH'].presence
+Selenium::WebDriver.logger.level = :debug
+Webdrivers.logger.level = :DEBUG
+
+Kimurai.configure do |config|
+  config.selenium_firefox_path = "/app/vendor/firefox/firefox"
+end
+
+  # config.selenium_firefox_path = ENV['FIREFOX_BIN'].presence
+  # config.firefoxdriver_path = ENV['GECKODRIVER_PATH'].presence
 # end
 
 # if Rails.env.production?
-  # Selenium::WebDriver::Firefox::Binary.path = "/app/vendor/firefox/firefox"
 # end
 # Kimurai.configure do |config|
 #   config.selenium_chrome_path = ENV['SELENIUM_CHROME_PATH'].presence
