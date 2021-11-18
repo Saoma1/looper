@@ -9,12 +9,16 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/nimbus-sans-l" type="text/css"/>
+
   </head>
 
   <body class='movie_background'>
     <div class="container">
+        <%= render 'shared/search' if user_signed_in? %>
+        <%= render 'shared/sidebar' if user_signed_in? %>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
   </body>

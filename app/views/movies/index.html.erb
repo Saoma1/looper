@@ -1,0 +1,27 @@
+<div class="main_container">
+  <div class="movie_backdrop"></div>
+  <div class="new_movie_wrapper hidden">
+    <div class="movie_left">
+      <div id="movie_poster">
+      </div>
+      <div class="movie_rating_wrapper">
+      </div>
+    </div>
+    <div class="movie_details">
+      <div id='movie_details'>
+      </div>
+      <%= simple_form_for(@movie) do |f| %>
+        <div class="form_inputs hidden">
+          <%= f.input :title, id: 'title' %>
+          <%= f.input :release_date, as: :date, start_year: Date.today.year - 90, id: 'release_date' %>
+          <%= f.input :genre, id: 'genre' %>
+          <%= f.input :poster_url, id: 'poster_url', as: :string %>
+        </div>
+        <%= button_tag(type: "submit", class: 'btn') do%>
+          <i class="fas fa-plus-square"></i>
+        <% end %>
+      <% end %>
+      <div class="movie_overview"></div>
+    </div>
+  </div>
+</div>
