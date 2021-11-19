@@ -17,7 +17,7 @@ class WebScraper < ApplicationRecord
 
   def parse
     init_options
-    start_page = 14
+    start_page = 13
     today = DateTime.now
     yesterday = (today - 1)
 
@@ -38,6 +38,7 @@ class WebScraper < ApplicationRecord
 
           save(main_torrent_page, alt_href)
           puts "sleep 2 seconds"
+          puts "on page #{start_page}"
           puts `ps -o rss #{$$}`.strip.split.last.to_i
           sleep(2)
         end
