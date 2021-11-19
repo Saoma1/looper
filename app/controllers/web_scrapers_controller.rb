@@ -2,7 +2,7 @@ class WebScrapersController < ApplicationController
 
   def new
     WebScraper.new.parse
-    redirect_to root_path, notice: 'Results stored in results.json file.'
+    redirect_to root_path, notice: 'Torrent Scraper has finished'
   end
 
   def back
