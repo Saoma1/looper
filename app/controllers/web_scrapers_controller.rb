@@ -2,9 +2,14 @@ class WebScrapersController < ApplicationController
 
   def new
     # WebScraper.new.parse
-    ScraperJob.perform_later
+    WebScraper.new.parse
 
     flash[:notice] = 'Torrent Scraper launched in backround'
+    redirect_to root_path
+  end
+
+  def job
+    ScraperJob.perform_later
     redirect_to root_path
   end
 

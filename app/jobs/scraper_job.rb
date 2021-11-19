@@ -2,10 +2,10 @@ class ScraperJob < ApplicationJob
   queue_as :default
 
   def perform()
-    WebScraper.new.parse
+    # WebScraper.new.parse
 
-    # puts "I'm starting the fake job"
-    # sleep 3
-    # puts "OK I'm done now"
+    puts "I'm starting the fake job"
+    sleep 3
+    puts "OK I'm done now"
   end
 end

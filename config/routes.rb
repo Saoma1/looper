@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :movies
   resources :torrents
   resources :web_scrapers
+  get 'job' => 'web_scrapers#job'
 end

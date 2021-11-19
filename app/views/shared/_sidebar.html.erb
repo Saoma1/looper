@@ -11,7 +11,10 @@
       <% end %>
     </div>
     <% if current_user.admin %>
-      <div class='head_icons flex'>
+      <div class='head_icons flex head_spacing'>
+        <%= link_to job_path do %>
+          <i class="fas fa-cat"></i>
+        <% end %>
         <%= link_to new_web_scraper_path do %>
           <i class="fas fa-cogs"></i>
         <% end %>
