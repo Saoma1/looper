@@ -1,15 +1,16 @@
 class WebScraper < ApplicationRecord
   def init_options
-    options = Selenium::WebDriver::Firefox::Options.new
+    options = Selenium::WebDriver::Chrome::Options.new
     options.add_argument('--headless')
     options.add_argument('--disable-gpu')
     options.add_argument('--no-sandbox')
-    options.binary = ENV['FIREFOX_BIN']
+    options.binary = ENV['GOOGLE_CHROME_BIN']
+    # options.binary = ENV['FIREFOX_BIN']
 
     # Selenium::WebDriver::Firefox::Binary.path=ENV['FIREFOX_BIN']
     # Selenium::WebDriver::Firefox::Service.driver_path=ENV['GECKODRIVER_PATH']
 
-    @driver = Selenium::WebDriver.for :firefox, options: options
+    @driver = Selenium::WebDriver.for :chrome, options: options
     @wait = Selenium::WebDriver::Wait.new(timeout: 2) # seconds
     @base_url = 'https://1337x.to'
     @start_url = 'https://1337x.to/cat/Movies/'
@@ -17,7 +18,7 @@ class WebScraper < ApplicationRecord
 
   def parse
     init_options
-    start_page = 11
+    start_page = 12
     today = DateTime.now
     yesterday = (today - 1)
 
@@ -40,7 +41,7 @@ class WebScraper < ApplicationRecord
           puts "sleep 2 seconds"
           puts "on page #{start_page}"
           puts `ps -o rss #{$$}`.strip.split.last.to_i
-          sleep(2)
+          sleep(1)
         end
         start_page += 1
       end
