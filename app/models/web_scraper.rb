@@ -4,6 +4,11 @@ class WebScraper < ApplicationRecord
     options.add_argument('--headless')
     options.add_argument('--disable-gpu')
     options.add_argument('--no-sandbox')
+    options.binary = ENV['FIREFOX_BIN']
+
+    Selenium::WebDriver::Firefox::Binary.path=ENV['FIREFOX_BIN']
+    Selenium::WebDriver::Firefox::Service.driver_path=ENV['GECKODRIVER_PATH']
+
     @driver = Selenium::WebDriver.for :firefox, options: options
     @wait = Selenium::WebDriver::Wait.new(timeout: 2) # seconds
     @base_url = 'https://1337x.to'
