@@ -4,7 +4,7 @@
     </div>
     <div class="head_user flex head_spacing">
       <% if user_signed_in? %>
-        <p>Hello</p>
+        <p>Hello <%= ENV['FIREFOX_BIN'] %></p>
         <h2 id='name'><%= current_user.username %></h2>
       <% else %>
         <h1> &#128075; sing up now</h1>

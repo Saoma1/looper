@@ -6,8 +6,8 @@ class WebScraper < ApplicationRecord
     options.add_argument('--no-sandbox')
     options.binary = ENV['FIREFOX_BIN']
 
-    Selenium::WebDriver::Firefox::Binary.path=ENV['FIREFOX_BIN']
-    Selenium::WebDriver::Firefox::Service.driver_path=ENV['GECKODRIVER_PATH']
+    # Selenium::WebDriver::Firefox::Binary.path=ENV['FIREFOX_BIN']
+    # Selenium::WebDriver::Firefox::Service.driver_path=ENV['GECKODRIVER_PATH']
 
     @driver = Selenium::WebDriver.for :firefox, options: options
     @wait = Selenium::WebDriver::Wait.new(timeout: 2) # seconds
