@@ -11,6 +11,7 @@
       <% end %>
     </div>
     <% if current_user.admin %>
+      <%= ENV['GOOGLE_CHROME_BIN'] %>
       <div class='head_icons flex head_spacing'>
         <%= link_to job_path do %>
           <i class="fas fa-cat"></i>
