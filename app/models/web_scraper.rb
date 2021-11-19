@@ -38,6 +38,7 @@ class WebScraper < ApplicationRecord
 
           save(main_torrent_page, alt_href)
           puts "sleep 2 seconds"
+          puts `ps -o rss #{$$}`.strip.split.last.to_i
           sleep(2)
         end
         start_page += 1
