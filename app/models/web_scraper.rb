@@ -36,7 +36,6 @@ class WebScraper < ApplicationRecord
 
           @driver.get (@base_url + alt_href)
           main_torrent_page = Nokogiri::HTML(@driver.page_source)
-
           save(main_torrent_page, alt_href)
           puts "sleep 2 seconds"
           puts "on page #{start_page}"
