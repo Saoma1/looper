@@ -17,7 +17,7 @@ class WebScraper < ApplicationRecord
 
   def parse
     init_options
-    start_page = 12
+    start_page = 14
     today = DateTime.now
     yesterday = (today - 1)
 
@@ -37,6 +37,8 @@ class WebScraper < ApplicationRecord
           main_torrent_page = Nokogiri::HTML(@driver.page_source)
 
           save(main_torrent_page, alt_href)
+          puts "sleep 2 seconds"
+          sleep(2)
         end
         start_page += 1
       end
@@ -50,19 +52,31 @@ class WebScraper < ApplicationRecord
     item = {}
     if main_torrent_page.css('div#mCSB_1_container').any?
       a = main_torrent_page.css('div#mCSB_1_container h3 a')
-      item[:main] = true
-      item[:url] = @base_url + a.attr('href').to_s
-      item[:title] = a.text
-      item[:release_year] = a.attr('href').to_s[-5..-2]
+      Torrent.create(
+        title: a.text,
+        url: @base_url + a.attr('href').to_s,
+        main: true,
+        release_year: a.attr('href').to_s[-5..-2],
+      )
+      # item[:main] = true
+      # item[:url] = @base_url + a.attr('href').to_s
+      # item[:title] = a.text
+      # item[:release_year] = a.attr('href').to_s[-5..-2]
     else
-      item[:main] = false
-      item[:url] = @base_url + alt_href.to_s
-      item[:release_year] = 'not yet'
-      item[:title] = main_torrent_page.css('div.box-info-heading h1').text
+      Torrent.create(
+        title: main_torrent_page.css('div.box-info-heading h1').text,
+        url: @base_url + alt_href.to_s,
+        main: false,
+        release_year: 'not yet',
+      )
+      # item[:main] = false
+      # item[:url] = @base_url + alt_href.to_s
+      # item[:release_year] = 'not yet'
+      # item[:title] = main_torrent_page.css('div.box-info-heading h1').text
     end
-    puts item
-
-    Torrent.create(item)
+    puts `ps -o rss #{$$}`.strip.split.last.to_i
+    # puts 'RAM USAGE: ' + `pmap #{Process.pid} | tail -1`[10,40].strip
+    # Torrent.create(item)
   end
 
 end
