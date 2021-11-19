@@ -1,3 +1,5 @@
 git add . && git commit -m'.' && git push origin master && git push heroku master
 
 heroku pg:reset DATABASE_URL && heroku run rake db:migrate && heroku run rake db:seed
+
+heroku run rails c

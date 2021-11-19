@@ -49,7 +49,7 @@ class WebScraper < ApplicationRecord
   private
 
   def save(main_torrent_page, alt_href)
-    item = {}
+    # item = {}
     if main_torrent_page.css('div#mCSB_1_container').any?
       a = main_torrent_page.css('div#mCSB_1_container h3 a')
       Torrent.create(
@@ -74,7 +74,7 @@ class WebScraper < ApplicationRecord
       # item[:release_year] = 'not yet'
       # item[:title] = main_torrent_page.css('div.box-info-heading h1').text
     end
-    puts `ps -o rss #{$$}`.strip.split.last.to_i
+    # puts `ps -o rss #{$$}`.strip.split.last.to_i
     # puts 'RAM USAGE: ' + `pmap #{Process.pid} | tail -1`[10,40].strip
     # Torrent.create(item)
   end
