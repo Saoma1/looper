@@ -1,7 +1,7 @@
 class CustomSessionsController < Devise::SessionsController
   ## for rails 5+, use before_action, after_action
-  before_filter :before_login, :only => :create
-  after_filter :after_login, :only => :create
+  before_action :before_login, :only => :create
+  after_action :after_login, :only => :create
 
   def before_login
   end
