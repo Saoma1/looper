@@ -12,17 +12,6 @@ Rails.application.routes.draw do
     end
   end
 
-  # resources :user do
-  #   collection do
-  #     delete :destroy_all_movies
-  #   end
-  # end
-
-  # resources :movies do
-  # end
-
-  # resource :movies, only: :destroy, action: :destroy_all
-
   resources :torrents
   resources :web_scrapers
 

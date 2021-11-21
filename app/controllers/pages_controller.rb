@@ -12,4 +12,5 @@ class PagesController < ApplicationController
     @movies = Movie.where(user_id: current_user.id)
     @torrents = Torrent.all
   end
+
 end
