@@ -10,13 +10,13 @@
         <h1> &#128075; sing up now</h1>
       <% end %>
     </div>
-    <% if current_user.admin %>
+    <%# <% if current_user.admin %>
       <div class='head_icons flex head_spacing'>
         <%= link_to destroy_all_user_movies_path(@user), method: :delete do%>
           <i class="fas fa-ban"></i>
         <% end %>
       </div>
-    <% end %>
+    <%# <% end %>
     <div class='head_icons flex head_spacing'>
       <%= link_to home_path do %>
         <i class="fas fa-home"></i>
