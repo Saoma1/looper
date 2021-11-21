@@ -1,8 +1,6 @@
 require("jquery");
 
 function createMovieList(movieSearchResults) {
-  const user_id = document.cookie.match("(^|;)\\s*" + user_id + "\\s*=\\s*([^;]+)")?.pop() || "";
-  console.log(user_id);
   const listResults = document.querySelector("#results");
   movieSearchResults.slice(0, 10).forEach((result) => {
     const movie = `
