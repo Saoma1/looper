@@ -10,7 +10,7 @@
     <div class="movie_details">
       <div id='movie_details'>
       </div>
-      <%= simple_form_for(@movie) do |f| %>
+      <%= simple_form_for [@user, @movie] do |f| %>
         <div class="form_inputs hidden">
           <%= f.input :title, id: 'title' %>
           <%= f.input :release_date, as: :date, start_year: Date.today.year - 90, id: 'release_date' %>

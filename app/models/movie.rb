@@ -1,3 +1,4 @@
 class Movie < ApplicationRecord
-   validates :title, :uniqueness => {:scope=>:user_id}
+  belongs_to :user
+  validates :title, :uniqueness => {:scope=>:user_id}
 end

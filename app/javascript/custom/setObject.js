@@ -1,5 +1,5 @@
 function checkWindow() {
-  if (window.location.pathname == "/movies") {
+  if (window.location.pathname == "/search") {
     window.onload = populateForm;
   }
 }

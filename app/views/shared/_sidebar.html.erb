@@ -4,7 +4,7 @@
     </div>
     <div class="head_user flex head_spacing">
       <% if user_signed_in? %>
-        <p>Hellos</p>
+        <p>Hello</p>
         <h2 id='name'><%= current_user.username %></h2>
       <% else %>
         <h1> &#128075; sing up now</h1>
@@ -12,16 +12,13 @@
     </div>
     <% if current_user.admin %>
       <div class='head_icons flex head_spacing'>
-        <%= link_to job_path do %>
-          <i class="fas fa-cat"></i>
-        <% end %>
-        <%= link_to new_web_scraper_path do %>
-          <i class="fas fa-cogs"></i>
+        <%= link_to destroy_all_user_movies_path(@user), method: :delete do%>
+          <i class="fas fa-ban"></i>
         <% end %>
       </div>
     <% end %>
     <div class='head_icons flex head_spacing'>
-      <%= link_to root_path do %>
+      <%= link_to home_path do %>
         <i class="fas fa-home"></i>
       <% end %>
       <% if user_signed_in? %>
@@ -37,10 +34,6 @@
     <div class="sidebar_title">
       <h2>My Movie List</h2>
     </div>
-    <%= ENV['GOOGLE_CHROME_BIN'] %>
-    <%= ENV['GOOGLE_CHROME_SHIM'] %>
-    <%= ENV['GOOGLE_CHROME_PATH'] %>
-    <%= ENV['FIREFOX_BIN'] %>
     <div class="scroll">
       <div class="block flex">
         <% unless @movies.nil? %>
@@ -59,7 +52,7 @@
               <div class='movie_hover flex-n'>
                 <i class="fas fa-sync-alt"></i>
                 <div class="movie_delete">
-                  <%= link_to movie_path(movie),
+                  <%= link_to user_movie_path(@user, movie),
                     method: :delete,
                     data: { confirm: "Are you sure you want to delete #{movie.title}?" } do %>
                     <i class="fas fa-trash"></i>

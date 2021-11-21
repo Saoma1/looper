@@ -22,17 +22,18 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'jquery-rails'
+
 gem 'devise'
 gem 'simple_form'
 gem 'font-awesome-sass', '~> 5.15.1'
-
-gem 'kimurai'
+gem 'webdrivers'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'selenium-webdriver'
 # Easy installation and use of web drivers to run system tests with browsers
-gem 'webdrivers'
+gem 'colorize', '~> 0.8.1'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

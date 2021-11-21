@@ -1,9 +1,29 @@
 Rails.application.routes.draw do
   devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root to: 'pages#home'
-  resources :movies
+
+  root to: 'pages#home', as: "home"
+  get '/search', to: 'pages#search', as: :search
+
+  resources :users do
+    resources :movies do
+      collection do
+        delete :destroy_all
+      end
+    end
+  end
+
+  # resources :user do
+  #   collection do
+  #     delete :destroy_all_movies
+  #   end
+  # end
+
+  # resources :movies do
+  # end
+
+  # resource :movies, only: :destroy, action: :destroy_all
+
   resources :torrents
   resources :web_scrapers
-  get 'job' => 'web_scrapers#job'
+
 end
