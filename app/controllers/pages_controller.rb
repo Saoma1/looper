@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
   def home
     @user = current_user
-    @movies = @user.movies
+    @movies = @user.movies.where(found: false)
     @movie_torrents = @user.movie_torrents.all
   end
 

@@ -7,8 +7,8 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: true
 
-  has_many :movies
-  has_many :movie_torrents, through: :movies
+  has_many :movies #, :dependent => :destroy
+  has_many :movie_torrents, through: :movies #, :dependent => :destroy
 
   def self.find_for_database_authentication warden_condition
     conditions = warden_condition.dup

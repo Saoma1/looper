@@ -25,6 +25,7 @@
   position: absolute;
   top: 18rem;
   left: 2rem;
+  width: 97%;
 
   display: flex;
   flex-wrap: nowrap;
@@ -42,6 +43,7 @@
   .movie_details {
     margin-left: 3rem;
     position: relative;
+    width: 100%;
 
     .tags {
       justify-content: flex-start;

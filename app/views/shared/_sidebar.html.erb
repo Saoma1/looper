@@ -18,7 +18,7 @@
       </div>
       <div class='head_icons flex head_spacing'>
       <%= link_to torrents_path do %>
-        <i class="fab fa-elementor"></i>
+        <i class="fab fa-elementor" id='torrent_path'></i>
       <% end %>
         <%= link_to destroy_all_user_movies_path(@user), method: :delete do%>
           <i class="fas fa-ban"></i>
@@ -27,7 +27,7 @@
     <% end %>
     <div class='head_icons flex head_spacing'>
       <%= link_to home_path do %>
-        <i class="fas fa-home"></i>
+        <i class="fas fa-home" id='home_path'></i>
       <% end %>
       <% if user_signed_in? %>
         <%= link_to destroy_user_session_path , method: :delete do%>

@@ -14,6 +14,7 @@ class MatchTorrentsJob < ApplicationJob
             poster_url: movie.poster_url,
             movie_id: movie.id)
           movie.found = true
+          movie.save!
         end
       end
     end
