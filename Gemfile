@@ -29,6 +29,9 @@ gem 'simple_form'
 gem 'font-awesome-sass', '~> 5.15.1'
 gem 'webdrivers'
 
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'selenium-webdriver'

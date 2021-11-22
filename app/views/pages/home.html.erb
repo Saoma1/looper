@@ -1,25 +1,37 @@
 <div class="main_container full_height">
   <div class="wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th>name</th>
-            <th>year</th>
-            <th>main</th>
-          </tr>
-        </thead>
+    <div class="home_title flex left">
+      <h2>Torrents from your movie List</h2>
+    </div>
+      <table class='torrent_movies'>
         <tbody>
-          <% unless @torrents.nil? %>
-            <% @torrents.each do |torrent| %>
-              <tr>
-                <td class='left'><a href="<%= torrent.url %>" target="_blank"><%= torrent.title %></a></td>
-                <td><%= torrent.release_year %></td>
-                <td><%= torrent.main == 't' ? 'yes' : 'no' %></td>
-              </tr>
+          <% unless @movie_torrents.nil? %>
+            <% @movie_torrents.each do |mv| %>
+                <tr>
+                  <td class='left'><img src="https://image.tmdb.org/t/p/w154/<%=mv.poster_url%>" alt="<%= mv.title%>"></td>
+                  <td class='left'>
+                    <a href="<%= mv.title%>" target="_blank">
+                      <div class="movie_content">
+                        <h1><%= mv.title %></h1>
+                        <p><%= mv.genre %></p>
+                        <p>released: <%= mv.release_date.strftime("%Y") %></p>
+                      </div>
+                    </a>
+                  </td>
+                  <td>
+                    <% unless mv.clicked %>
+                      <i class="fas fa-bell"></i>
+                    <% end %>
+                    <h2>
+                      <%= mv.release_date.strftime("%Y/%m/%d") %>
+                    </h2>
+                  </td>
+                </tr>
             <% end %>
           <% end %>
         </tbody>
       </table>
     </div>
+
   </div>
 </div>

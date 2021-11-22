@@ -12,6 +12,11 @@
     </div>
     <% if current_user.admin %>
       <div class='head_icons flex head_spacing'>
+        <%= link_to sidekiq_web_path do %>
+            <i class="fas fa-cogs"></i>
+        <% end %>
+      </div>
+      <div class='head_icons flex head_spacing'>
       <%= link_to torrents_path do %>
         <i class="fab fa-elementor"></i>
       <% end %>

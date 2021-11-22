@@ -1,9 +1,4 @@
-.full_height {
-  height: calc(100% - var(--top-height));
-  overflow-y: auto;
-}
-
-table {
+.torrent {
   width: 100%;
   border-spacing: 0;
   text-align: center;

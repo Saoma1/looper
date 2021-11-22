@@ -1,12 +1,13 @@
 class WebScraper < ApplicationRecord
   def selenium_options
     options = Selenium::WebDriver::Firefox::Options.new
-    options.add_argument('--headless')
+    # options.add_argument('--headless')
     options.add_argument('--disable-gpu')
     options.add_argument('--no-sandbox')
     options.add_argument("--enable-javascript")
     options.add_argument("window-size=1400,900")
     options.binary = ENV['FIREFOX_BIN']
+    # options.binary_location = ENV['GOOGLE_CHROME_BIN']
     options
   end
 
@@ -28,7 +29,7 @@ class WebScraper < ApplicationRecord
 
   def parse
     init_options
-    start_page = 7
+    start_page = 6
     today = DateTime.now
     yesterday = (today - 1)
     nr = 1

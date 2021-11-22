@@ -12,7 +12,13 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :movie_torrents
   resources :torrents
   resources :web_scrapers
+
+  require "sidekiq/web"
+  authenticate :user, ->(user) { user.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 
 end

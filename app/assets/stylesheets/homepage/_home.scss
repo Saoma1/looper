@@ -1,0 +1,74 @@
+.home_title {
+  background-color: var(--secondary-bg-color);
+  height: 5rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  align-items: flex-start !important;
+}
+
+.torrent_movies {
+  width: 100%;
+  border-spacing: 0;
+  text-align: center;
+  font-size: 0.8rem;
+  border-collapse: separate;
+  border-spacing: 0 1em;
+
+  img {
+    height: 8rem;
+  }
+
+  a {
+    display: contents;
+    text-decoration: none;
+    color: var(--primary-font-color);
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+      color: var(--highlight-color) !important;
+    }
+  }
+
+  #added_movies {
+    th:nth-child(1) {
+      width: 80%;
+    }
+
+    th:nth-child(2) {
+      width: 10%;
+    }
+    th:nth-child(3) {
+      width: 10%;
+    }
+  }
+
+  tbody {
+    color: var(--primary-font-color);
+
+    td {
+      padding: 0.5rem;
+      position: relative;
+
+      svg {
+        position: absolute;
+        top: -0.8rem;
+        right: 1rem;
+        font-size: 2rem;
+        color: green;
+      }
+    }
+
+    .left {
+      text-align: left;
+    }
+
+    tr:nth-child(even) {
+      background: var(--secondary-bg-color);
+    }
+    tr:nth-child(odd) {
+      background: rgba(var(--primary-bg-color), 1);
+    }
+  }
+}

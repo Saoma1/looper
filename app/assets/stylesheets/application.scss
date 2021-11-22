@@ -4,11 +4,12 @@
 
 // Your CSS partials
 @import "authentication/_authentication";
-@import "homepage/_table";
+@import "homepage/_home";
 @import "bars/_sidebar";
 @import "bars/_search";
 @import "custom/_custom";
 @import "pages/_moviesSearch";
+@import "pages/_torrents";
 
 *,
 *::before,
@@ -54,4 +55,9 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+.full_height {
+  height: calc(100% - var(--top-height));
+  overflow-y: auto;
 }
