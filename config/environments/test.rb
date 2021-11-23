@@ -58,5 +58,7 @@ Rails.application.configure do
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
 
+  # ActionView::Template::Error (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true)
+
   Rails.application.routes.default_url_options[:host] = 'localhost:3000'
 end
