@@ -2,6 +2,7 @@ class TorrentsController < ApplicationController
   def index
     @torrents = Torrent.all
     @user = current_user
+    # @movies = @user.movies.where(found: false)
     @movies = Movie.where(user_id: current_user.id)
   end
 

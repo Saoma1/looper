@@ -29,7 +29,7 @@ class WebScraper < ApplicationRecord
 
   def parse
     init_options
-    start_page = 6
+    start_page = 7
     today = DateTime.now
     yesterday = (today - 1)
     nr = 1

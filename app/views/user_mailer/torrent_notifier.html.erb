@@ -1,0 +1,8 @@
+<p>Hey <%= @user.username %> 👋</p>
+
+<p> we found this torrent: </p>
+<%= @movies.each do |movie|%>
+  <a href="<%= movie[:url]%>">
+    <h3> <%= movie[:title] %> </h3>
+  </a>
+<% end %>

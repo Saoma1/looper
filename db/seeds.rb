@@ -6,5 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(username:'Soto', email: 'soto@soto.com', password: 111111, admin: true)
-User.create(username:'Saoma', email: 'saoma@soto.com', password: 111111)
+User.create(username:'Soto', email: 'sotirios.dimitriou@gmail.com', password: 111111, admin: true)
+# User.create(username:'Saoma', email: 'saoma@soto.com', password: 111111)
+
+
+# rake db:seed:seed_file_name
+# rake db:seed:all
