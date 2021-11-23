@@ -5,6 +5,7 @@ RSpec.describe "Searches", driver: :selenium_firefox, js: true, type: :system do
   before do
     driven_by(:rack_test)
     user = FactoryBot.create(:user)
+    user.confirm
     login_as(user, :scope => :user)
     driven_by :selenium_firefox
   end

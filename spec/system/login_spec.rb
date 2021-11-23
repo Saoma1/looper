@@ -4,6 +4,7 @@ RSpec.describe "Login", type: :system do
   before do
     driven_by(:rack_test)
     user = FactoryBot.create(:user)
+    user.confirm
   end
   it "login with username and password" do
     visit '/users/sign_in'
