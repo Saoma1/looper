@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2021_11_22_224146) do
     t.string "title"
     t.string "release_year"
     t.string "url"
-    t.string "main"
+    t.boolean "main"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

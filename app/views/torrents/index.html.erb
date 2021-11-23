@@ -14,7 +14,7 @@
               <tr>
                 <td class='left'><a href="<%= torrent.url %>" target="_blank"><%= torrent.title %></a></td>
                 <td><%= torrent.release_year %></td>
-                <td><%= torrent.main == 't' ? 'yes' : 'no' %></td>
+                <td><%= torrent.main %></td>
               </tr>
             <% end %>
           <% end %>

@@ -4,7 +4,7 @@ class CreateTorrents < ActiveRecord::Migration[6.1]
       t.string :title
       t.string :release_year
       t.string :url
-      t.string :main
+      t.boolean :main
 
       t.timestamps
     end
