@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'test_helper'
 require 'webdrivers'
 
 RSpec.describe "Searches", driver: :selenium_firefox, js: true, type: :system do

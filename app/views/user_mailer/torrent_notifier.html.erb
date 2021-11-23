@@ -1,6 +1,6 @@
 <p>Hey <%= @user.username %> 👋</p>
 
-<p> we found this torrent: </p>
+<p>we found these torrents for you: </p>
 <%= @movies.each do |movie|%>
   <a href="<%= movie[:url]%>">
     <h3> <%= movie[:title] %> </h3>
